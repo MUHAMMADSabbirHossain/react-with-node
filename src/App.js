@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 function App() {
 
   const [users, setUsers] = useState([]);
+
+  // load data
   useEffect(() => {
     // fetch("https://jsonplaceholder.typicode.com/users")
     fetch("http://localhost:5000/users")
@@ -45,8 +47,8 @@ function App() {
       <h1>My Own data: {users.length}</h1>
 
       <form onSubmit={handleAddUser} action="">
-        <input type="text" name="name" id="" />
-        <input type="email" name="email" id="" />
+        <input type="text" name="name" id="" placeholder='Name'/>
+        <input type="email" name="email" id="" placeholder='Email'/>
         <button type="submit">Add User</button>
       </form>
       <ul>
